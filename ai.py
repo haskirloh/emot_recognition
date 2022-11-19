@@ -9,11 +9,9 @@ import random
 import numpy
 import torch as torch
 import torch.nn as nn
-from sklearn.preprocessing import StandardScaler
 
 cuda = torch.device('cuda')
 
-scaler = StandardScaler()
 
 
 def linear(lst):
@@ -101,7 +99,6 @@ def get_data(category):
                 y = [0 for i in range(7)]
                 y[p] = 1
                 xd = eval(file.read())
-                # xd = scaler.fit_transform(xd)
                 h1, h2 = 0, 0
                 for g in xd:
                     h1 += g[0]
